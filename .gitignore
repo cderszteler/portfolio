@@ -66,3 +66,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Files regarding the required documentation for this as my school project
+school
