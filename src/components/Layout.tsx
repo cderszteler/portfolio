@@ -1,4 +1,5 @@
 import React from "react";
+import {Footer} from "@/components/Footer";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,6 +11,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </div>
       <div className="relative flex w-full flex-col">
         <main className="flex-auto">{children}</main>
+        <Footer/>
       </div>
     </>
   )
