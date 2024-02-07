@@ -8,7 +8,6 @@ import {Popover, Transition} from '@headlessui/react'
 import {ChevronDownIcon, XMarkIcon} from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 
-// TODO: Change avatar and favicon image
 import avatarImage from '@/images/avatar.jpg'
 import {Container} from "@/components/Container";
 
