@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import clsx from 'clsx'
 import React from "react";
@@ -32,4 +34,17 @@ export function Button({
   ) : (
     <Link className={className} {...props} />
   )
+}
+
+export function Downloadable({ href, children }: {
+  href: string
+  children: React.ReactElement<React.ComponentPropsWithoutRef<'button'>>
+}) {
+  return React.cloneElement(children, {
+    onClick: () => {
+      if (typeof window !== "undefined") {
+        window.location.href = href
+      }
+    }
+  })
 }

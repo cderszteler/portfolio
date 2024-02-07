@@ -9,7 +9,7 @@ import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
 import {Container} from "@/components/Container";
 import {GitHubIcon, LinkedInIcon} from "@/components/SocialIcons";
-import {Button} from "@/components/Button";
+import {Button, Downloadable} from "@/components/Button";
 import {ArrowDownIcon} from "@heroicons/react/24/solid";
 import {
   ArrowRightIcon,
@@ -117,11 +117,16 @@ function Resume() {
           <Role key={index} role={role}/>
         ))}
       </ol>
-      {/*TODO: Implement download*/}
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
-        Download CV
-        <ArrowDownIcon className="h-3 w-3 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50"/>
-      </Button>
+      {/*TODO: Specify correct CV*/}
+      <Downloadable href="/assets/CV.jpg">
+        <Button
+          variant="secondary"
+          className="group mt-6 w-full"
+        >
+          Download CV
+          <ArrowDownIcon className="h-3 w-3 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50"/>
+        </Button>
+      </Downloadable>
     </div>
   )
 }
