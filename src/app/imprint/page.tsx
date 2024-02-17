@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Impressum'
 }
 
-export default function About() {
+export default function Imprint() {
   return (
     <SimpleLayout title="Impressum" intro={""}>
       <div className="space-y-7 text-base text-zinc-600 sm:space-y-12 dark:text-zinc-400">
