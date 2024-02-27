@@ -18,5 +18,10 @@
     "projects": "Projekte",
     "imprint": "Impressum"
   },
-  "footer": "Alle Rechte vorbehalten."
+  "footer": "Alle Rechte vorbehalten.",
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Entschuldigung, wir konnten die Seite, die Sie gesucht haben, nicht finden.",
+    "button": "Zur Startseite"
+  }
 }
