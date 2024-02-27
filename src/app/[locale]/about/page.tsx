@@ -8,7 +8,9 @@ import {GitHubIcon, LinkedInIcon,} from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
 import React from "react";
 import {EnvelopeIcon} from '@heroicons/react/24/solid'
+import initTranslations from "@/app/i18n";
 
+// TODO: Translate all metadata (on every page)
 export const metadata: Metadata = {
   title: 'About',
   description: 'I’m Christoph Derszteler. I keep learning to shape a better world.',
@@ -38,7 +40,14 @@ function SocialLink({
   )
 }
 
-export default function About() {
+const i18nNamespaces = ['about', 'index'];
+
+export default async function About({ params: { locale } }:
+{
+  params: { locale: string }
+}) {
+  const { t } = await initTranslations(locale, i18nNamespaces);
+
   return (
     <Container className="mt-16 sm:mt-32">
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -54,41 +63,26 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            I’m Christoph Derszteler. I keep learning to shape a better world.
+            {t('title')}
           </h1>
-          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-            <p>
-              My mother told me that ever since I was little, I could pick any
-              child’s lock. I was always curious to find out how mechanisms work,
-              why certain things behave in the way they do and how to solve
-              problems in the most efficient way.
-            </p>
-            <p>
-              When I was barely 13 years old, I started programming and was
-              immediately amazed by the logical clarity of computers.
-              Since then, I’ve been developing my skills, continuing teaching me
-              new techniques and gaining experience. I am proud to say that
-              I started freelancing successfully with just 16 years old.
-            </p>
-            <p>
-              Looking ahead, I plan to start studying computer science in
-              autumn 2024. I’m really looking forward to expanding my
-              knowledge, gaining new insights into different companies and cultures
-              and through that learning the tools to shape a better world.
-            </p>
+          <div
+            className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+            <p>{t('paragraph.first')}</p>
+            <p>{t('paragraph.second')}</p>
+            <p>{t('paragraph.third')}</p>
           </div>
         </div>
         <div className="lg:pl-20">
           <ul role="list">
             <SocialLink href="https://github.com/cderszteler" icon={GitHubIcon} className="mt-4">
-              Follow on GitHub
+              {t('index:socials.github')}
             </SocialLink>
             <SocialLink
               href="https://linkedin.com/in/cderszteler"
               icon={LinkedInIcon}
               className="mt-4"
             >
-              Follow on LinkedIn
+              {t('index:socials.linkedIn')}
             </SocialLink>
             <SocialLink
               href="mailto:contact@derszteler.de"
