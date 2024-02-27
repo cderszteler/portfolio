@@ -1,6 +1,7 @@
 import { Container } from '@/components/Container'
 import {Button} from "@/components/Button";
 
+// TODO: Fix not found
 export default function NotFound() {
   return (
     <Container className="flex h-full items-center pt-16 sm:pt-32">

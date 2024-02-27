@@ -1,0 +1,14 @@
+{
+  "title": "Softwareentwickler und Student.",
+  "about": "Ich bin Christoph, Softwareentwickler und Student in Bonn. Seit 2022 arbeite ich leidenschaftlich als Freiberufler. Im Jahr 2024 werde ich anfangen, Informatik an der Universität Bonn zu studieren.",
+  "socials": {
+    "github": "Folge mir auf GitHub",
+    "linkedIn": "Folge mir auf LinkedIn"
+  },
+  "cv": {
+    "work": "Berufserfahrung",
+    "freelancing": "Freiberuflich",
+    "learn-more": "Erfahre mehr",
+    "present": "Heute"
+  }
+}

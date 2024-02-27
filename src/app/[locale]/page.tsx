@@ -9,13 +9,12 @@ import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
 import {Container} from "@/components/Container";
 import {GitHubIcon, LinkedInIcon} from "@/components/SocialIcons";
-import {Button, Downloadable} from "@/components/Button";
-import {ArrowDownIcon} from "@heroicons/react/24/solid";
 import {
   ArrowRightIcon,
   BriefcaseIcon,
   UserIcon
 } from "@heroicons/react/24/outline";
+import initTranslations, {Translation} from "@/app/i18n";
 
 function SocialLink({
   icon: Icon,
@@ -31,17 +30,18 @@ function SocialLink({
 }
 
 type Role = {
-  company: string
-  title: string | { label: React.ReactNode, href: string }
+  company: string | ((t: Translation) => string)
+  title: string | ((t: Translation) => string)
+    | { label: (t: Translation) => React.ReactNode, href: string }
   start: string | { label: string; dateTime: string }
-  end: string | { label: string; dateTime: string }
+  end: string | { label: ((t: Translation) => string); dateTime: string }
 } & ({ logo: ImageProps['src'], icon?: never } | { icon: typeof UserIcon, logo?: never })
 
-function Role({role}: { role: Role }) {
+function Role({ role, t }: { role: Role, t: Translation }) {
   const startLabel = typeof role.start === 'string' ? role.start : role.start.label
   const startDate = typeof role.start === 'string' ? role.start : role.start.dateTime
 
-  const endLabel = typeof role.end === 'string' ? role.end : role.end.label
+  const endLabel = typeof role.end === 'string' ? role.end : role.end.label(t)
   const endDate = typeof role.end === 'string' ? role.end : role.end.dateTime
 
   return (
@@ -56,18 +56,18 @@ function Role({role}: { role: Role }) {
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
         <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-          {role.company}
+          {typeof role.company === "string" ? role.company : role.company(t)}
         </dd>
         <dt className="sr-only">Role</dt>
         <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-          {typeof role.title !== 'string'
+          {typeof role.title === "object"
             ? <Link
                 href={role.title.href}
                 className="hover:text-zinc-600 dark:hover:text-zinc-300 transition"
               >
-                {role.title.label}
+                {role.title.label(t)}
               </Link>
-            : role.title
+            : (typeof role.title === "string" ? role.title : role.title(t))
           }
         </dd>
         <dt className="sr-only">Date</dt>
@@ -84,37 +84,37 @@ function Role({role}: { role: Role }) {
   )
 }
 
-function Resume() {
-  let resume: Array<Role> = [
-    {
-      company: 'Freelancing',
-      title: {
-        label: (
-          <span className="flex items-end justify-center gap-x-1">
-            Learn more
-            <ArrowRightIcon className="w-3 h-3 "/>
-          </span>
-        ),
-        href: '/projects#clients'
-      },
-      icon: UserIcon,
-      start: '2022',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear().toString(),
-      },
-    }
-  ]
+const resume: Array<Role> = [
+  {
+    company: (t) => t('cv.freelancing'),
+    title: {
+      label: (t) => (
+        <span className="flex items-end justify-center gap-x-1">
+          {t('cv.learn-more')}
+          <ArrowRightIcon className="w-3 h-3 "/>
+        </span>
+      ),
+      href: '/projects'
+    },
+    icon: UserIcon,
+    start: '2022',
+    end: {
+      label: (t) => t('cv.present'),
+      dateTime: '2024',
+    },
+  }
+]
 
+function Resume({ t }: { t: Translation }) {
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none text-zinc-400 dark:text-zinc-500"/>
-        <span className="ml-3">Work</span>
+        <span className="ml-3">{t('cv.work')}</span>
       </h2>
       <ol className="mt-6 space-y-4">
         {resume.map((role, index) => (
-          <Role key={index} role={role}/>
+          <Role key={index} role={role} t={t}/>
         ))}
       </ol>
       {/*TODO: Specify correct CV*/}
@@ -159,7 +159,14 @@ function Photos() {
   )
 }
 
-export default async function Home() {
+const i18nNamespaces = ['index'];
+
+export default async function Home({ params: { locale } }:
+{
+  params: { locale: string }
+}) {
+  const { t } = await initTranslations(locale, i18nNamespaces);
+
   return (
     <>
       <Container className="mt-9">
@@ -167,22 +174,20 @@ export default async function Home() {
           <h1
             className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100"
           >
-            Software engineer and student.
+            {t('title')}
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Christoph, a software engineer and student based in Bonn, Germany.
-            I started freelancing in 2022 and have been passionate about it ever since.
-            In 2024 I will start studying computer science at the university in Bonn.
+            {t('about')}
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
               href="https://github.com/cderszteler"
-              aria-label="Follow on GitHub"
+              aria-label={t('socials.github')}
               icon={GitHubIcon}
             />
             <SocialLink
               href="https://linkedin.com/in/cderszteler"
-              aria-label="Follow on LinkedIn"
+              aria-label={t('socials.linkedIn')}
               icon={LinkedInIcon}
             />
           </div>
@@ -191,7 +196,7 @@ export default async function Home() {
       <Photos/>
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-screen-sm">
-          <Resume/>
+          <Resume t={t}/>
         </div>
       </Container>
     </>

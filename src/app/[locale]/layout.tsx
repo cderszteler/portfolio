@@ -5,6 +5,7 @@ import React from "react";
 import '@/styles/tailwind.css'
 import {Layout} from "@/components/Layout";
 import { Providers } from "./providers";
+import initTranslations from "@/app/i18n";
 
 export const metadata: Metadata = {
   title: {
@@ -16,15 +17,21 @@ export const metadata: Metadata = {
     'In 2024 I will start studying computer science at the university in Bonn.',
 }
 
-export default function RootLayout({
+const i18nNamespaces = ['index'];
+
+export default async function RootLayout({
+  params: { locale },
   children,
 }: {
+  params: { locale: string }
   children: React.ReactNode
 }) {
+  const { resources } = await initTranslations(locale, i18nNamespaces);
+
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <body className="flex h-full bg-zinc-50 dark:bg-black">
-        <Providers>
+        <Providers namespaces={i18nNamespaces} resources={resources} locale={locale}>
           <div className="flex w-full">
             <Layout>{children}</Layout>
           </div>
