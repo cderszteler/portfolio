@@ -10,5 +10,13 @@
     "freelancing": "Freiberuflich",
     "learn-more": "Erfahre mehr",
     "present": "Heute"
-  }
+  },
+  "navigation": {
+    "title": "Navigation",
+    "menu": "Menü",
+    "about": "Über mich",
+    "projects": "Projekte",
+    "imprint": "Impressum"
+  },
+  "footer": "Alle Rechte vorbehalten."
 }

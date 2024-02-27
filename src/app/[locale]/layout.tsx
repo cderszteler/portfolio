@@ -26,14 +26,14 @@ export default async function RootLayout({
   params: { locale: string }
   children: React.ReactNode
 }) {
-  const { resources } = await initTranslations(locale, i18nNamespaces);
+  const { t, resources } = await initTranslations(locale, i18nNamespaces);
 
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <body className="flex h-full bg-zinc-50 dark:bg-black">
         <Providers namespaces={i18nNamespaces} resources={resources} locale={locale}>
           <div className="flex w-full">
-            <Layout>{children}</Layout>
+            <Layout t={t}>{children}</Layout>
           </div>
         </Providers>
       </body>

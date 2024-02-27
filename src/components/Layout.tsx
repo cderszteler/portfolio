@@ -1,8 +1,9 @@
 import React from "react";
 import {Footer} from "@/components/Footer";
-import { Header } from "./header/Header";
+import {Header} from "./header/Header";
+import {Translation} from "@/app/i18n";
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export function Layout({ t, children }: { t: Translation, children: React.ReactNode }) {
   return (
     <>
       <div className="fixed inset-0 flex justify-center sm:px-8">
@@ -13,7 +14,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <div className="relative flex w-full flex-col">
         <Header/>
         <main className="flex-auto">{children}</main>
-        <Footer/>
+        <Footer t={t}/>
       </div>
     </>
   )

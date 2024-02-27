@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import {ContainerInner, ContainerOuter} from '@/components/Container'
 import React from "react";
+import {Translation} from "@/app/i18n";
 
 function NavLink({
   href,
@@ -20,7 +21,7 @@ function NavLink({
   )
 }
 
-export function Footer() {
+export async function Footer({ t }: { t: Translation }) {
   return (
     <footer className="mt-32 flex-none">
       <ContainerOuter>
@@ -29,16 +30,16 @@ export function Footer() {
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row sm:items-end">
               <div className="flex flex-col sm:gap-y-4">
                 <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                  <NavLink href="/about">About</NavLink>
-                  <NavLink href="/projects">Projects</NavLink>
+                  <NavLink href="/about">{t('navigation.about')}</NavLink>
+                  <NavLink href="/projects">{t('navigation.projects')}</NavLink>
                 </div>
                 <div className="flex flex-wrap justify-center gap-x-6 text-sm text-zinc-400 dark:text-zinc-500 sm:justify-start">
-                  <NavLink href="/imprint">Imprint</NavLink>
+                  <NavLink href="/imprint">{t('navigation.imprint')}</NavLink>
                 </div>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                &copy; {new Date().getFullYear()} Christoph Derszteler.
-                All rights reserved.
+                &copy; {new Date().getFullYear()} Christoph Derszteler.&nbsp;
+                {t('footer')}
               </p>
             </div>
           </ContainerInner>

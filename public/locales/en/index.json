@@ -10,5 +10,13 @@
     "freelancing": "Freelancing",
     "learn-more": "Learn more",
     "present": "Present"
-  }
+  },
+  "navigation": {
+    "title": "Navigation",
+    "menu": "Menu",
+    "about": "About",
+    "projects": "Projects",
+    "imprint": "Imprint"
+  },
+  "footer": "All rights reserved."
 }
