@@ -1,0 +1,22 @@
+{
+  "title": "Projects on which and clients with whom I’ve developed.",
+  "intro": "Recently, I've worked mostly on internal projects as a freelancer that I cannot share publicly, however, I try to share my work as often as possible. So check out my few public projects or see my clients' letters of reference.",
+  "projects": {
+    "abi-management": {
+      "description": "Fullstack application with Spring Boot and NextJS to manage my school’s graduating year."
+    },
+    "more": {
+      "title": "More Projects",
+      "description": "View more of my projects"
+    }
+  },
+  "clients": {
+    "klauke-enterprises": {
+      "excerpt": ""
+    },
+    "rabek": {
+      "excerpt": "We needed [...] expertise in the field of software software development with a focus on backend development. [...] All assigned tasks were completed with great care and to our complete satisfaction."
+    },
+    "letter-of-reference": "Request letter of reference"
+  }
+}
