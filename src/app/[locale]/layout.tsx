@@ -1,23 +1,26 @@
-import type {Metadata} from "next";
-
 import React from "react";
 
 import '@/styles/tailwind.css'
 import {Layout} from "@/components/Layout";
-import { Providers } from "./providers";
+import {Providers} from "./providers";
 import initTranslations from "@/app/i18n";
 
-export const metadata: Metadata = {
-  title: {
-    template: '%s - Christoph Derszteler',
-    default: 'Christoph Derszteler - Software engineer, student, and music enthusiast',
-  },
-  description: 'I’m Christoph, a software engineer and student based in Bonn, Germany. ' +
-    'I started freelancing in 2022 and have been passionate about it ever since. ' +
-    'In 2024 I will start studying computer science at the university in Bonn.',
-}
-
 const i18nNamespaces = ['index'];
+
+export async function generateMetadata({ params: { locale } }:
+{
+  params: { locale: string }
+}) {
+  const { t } = await initTranslations(locale, i18nNamespaces);
+
+  return {
+    title: {
+      template: "%s - Christoph Derszteler",
+      default: t("metadata.default"),
+    },
+    description: t('metadata.description'),
+  }
+}
 
 export default async function RootLayout({
   params: { locale },

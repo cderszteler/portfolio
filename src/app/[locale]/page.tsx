@@ -54,7 +54,7 @@ function Role({ role, t }: { role: Role, t: Translation }) {
         }
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
-        <dt className="sr-only">Company</dt>
+        <dt className="sr-only">{t('cv.company')}</dt>
         <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
           {typeof role.company === "string" ? role.company : role.company(t)}
         </dd>
@@ -159,7 +159,7 @@ function Photos() {
   )
 }
 
-const i18nNamespaces = ['index'];
+const i18nNamespaces = ['home', 'index'];
 
 export default async function Home({ params: { locale } }:
 {
@@ -182,12 +182,12 @@ export default async function Home({ params: { locale } }:
           <div className="mt-6 flex gap-6">
             <SocialLink
               href="https://github.com/cderszteler"
-              aria-label={t('socials.github')}
+              aria-label={t('index:socials.github')}
               icon={GitHubIcon}
             />
             <SocialLink
               href="https://linkedin.com/in/cderszteler"
-              aria-label={t('socials.linkedIn')}
+              aria-label={t('index:socials.linkedIn')}
               icon={LinkedInIcon}
             />
           </div>

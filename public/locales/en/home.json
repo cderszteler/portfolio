@@ -1,0 +1,11 @@
+{
+  "title": "Software engineer and student.",
+  "about": "I’m Christoph, a software engineer and student based in Bonn, Germany. I started freelancing in 2022 and have been passionate about it ever since. In 2024 I will start studying computer science at the university in Bonn.",
+  "cv": {
+    "company": "Company",
+    "work": "Experience",
+    "freelancing": "Freelancing",
+    "learn-more": "Learn more",
+    "present": "Present"
+  }
+}

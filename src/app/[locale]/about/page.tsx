@@ -1,4 +1,3 @@
-import {type Metadata} from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -10,10 +9,18 @@ import React from "react";
 import {EnvelopeIcon} from '@heroicons/react/24/solid'
 import initTranslations from "@/app/i18n";
 
-// TODO: Translate all metadata (on every page)
-export const metadata: Metadata = {
-  title: 'About',
-  description: 'I’m Christoph Derszteler. I keep learning to shape a better world.',
+const i18nNamespaces = ['about', 'index'];
+
+export async function generateMetadata({ params: { locale } }:
+{
+  params: { locale: string }
+}) {
+  const { t } = await initTranslations(locale, i18nNamespaces);
+
+  return {
+    title: t('metadata.title'),
+    description: t('metadata.description'),
+  }
 }
 
 function SocialLink({
@@ -39,8 +46,6 @@ function SocialLink({
     </li>
   )
 }
-
-const i18nNamespaces = ['about', 'index'];
 
 export default async function About({ params: { locale } }:
 {

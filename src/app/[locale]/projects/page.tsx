@@ -1,4 +1,3 @@
-import {type Metadata} from 'next'
 import Image from 'next/image'
 
 import {Card} from '@/components/Card'
@@ -11,9 +10,18 @@ import {GitHubIcon} from "@/components/SocialIcons";
 import {ArrowRightIcon, BuildingOffice2Icon} from "@heroicons/react/24/outline";
 import initTranslations, {Translation} from "@/app/i18n";
 
-export const metadata: Metadata = {
-  title: 'Projects',
-  description: 'Projects on which and clients with whom I’ve developed.',
+const i18nNamespaces = ['projects'];
+
+export async function generateMetadata({ params: { locale } }:
+{
+  params: { locale: string }
+}) {
+  const { t } = await initTranslations(locale, i18nNamespaces);
+
+  return {
+    title: t('metadata.title'),
+    description: t('metadata.description'),
+  }
 }
 
 const projects = [
@@ -130,8 +138,6 @@ function Clients({ t }: { t: Translation }) {
     </ul>
   )
 }
-
-const i18nNamespaces = ['projects'];
 
 export default async function ProjectsPage({ params: { locale } }:
 {

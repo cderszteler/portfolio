@@ -1,14 +1,20 @@
-import {type Metadata} from 'next'
 import React from "react";
 import Link from "next/link";
 import {SimpleLayout} from "@/components/SimpleLayout";
 import initTranslations from "@/app/i18n";
 
-export const metadata: Metadata = {
-  title: 'Impressum'
-}
-
 const i18nNamespaces = ['imprint'];
+
+export async function generateMetadata({ params: { locale } }:
+{
+  params: { locale: string }
+}) {
+  const { t } = await initTranslations(locale, i18nNamespaces);
+
+  return {
+    title: t('metadata.title')
+  }
+}
 
 export default async function Imprint({ params: { locale } }:
 {
