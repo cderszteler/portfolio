@@ -28,7 +28,7 @@ export async function Footer({ t }: { t: Translation }) {
         <div className="border-t border-zinc-100 pb-16 pt-10 dark:border-zinc-700/40">
           <ContainerInner>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row sm:items-end">
-              <div className="flex flex-col sm:gap-y-4">
+              <div className="flex flex-col gap-y-1 sm:gap-y-4">
                 <div className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200">
                   <NavLink href="/about">{t('navigation.about')}</NavLink>
                   <NavLink href="/projects">{t('navigation.projects')}</NavLink>
