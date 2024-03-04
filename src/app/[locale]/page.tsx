@@ -15,6 +15,7 @@ import {
   UserIcon
 } from "@heroicons/react/24/outline";
 import initTranslations, {Translation} from "@/app/i18n";
+import {Downloadable} from "@/components/Button";
 
 function SocialLink({
   icon: Icon,
