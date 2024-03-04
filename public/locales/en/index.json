@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "default": "Christoph Derszteler - Software engineer, student and music enthusiast",
+    "description": "I’m Christoph, a software engineer and student based in Bonn, Germany. I started freelancing in 2022 and have been passionate about it ever since. In 2024 I will start studying computer science at the university in Bonn."
+  },
+  "socials": {
+    "github": "Follow on GitHub",
+    "linkedIn": "Follow on LinkedIn"
+  },
+  "navigation": {
+    "title": "Navigation",
+    "menu": "Menu",
+    "about": "About",
+    "projects": "Projects",
+    "imprint": "Imprint"
+  },
+  "footer": "All rights reserved.",
+  "notFound": {
+    "title": "Page not found",
+    "description": "Sorry, we couldn’t find the page you’re looking for.",
+    "button": "Go back home"
+  }
+}

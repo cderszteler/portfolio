@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "default": "Christoph Derszteler - Softwareentwickler, Student und Musikenthusiast",
+    "description": "Ich bin Christoph, Softwareentwickler und Student in Bonn. Seit 2022 arbeite ich leidenschaftlich als Freiberufler. Im Jahr 2024 werde ich anfangen, Informatik an der Universität Bonn zu studieren."
+  },
+  "socials": {
+    "github": "Folge mir auf GitHub",
+    "linkedIn": "Folge mir auf LinkedIn"
+  },
+  "navigation": {
+    "title": "Navigation",
+    "menu": "Menü",
+    "about": "Über mich",
+    "projects": "Projekte",
+    "imprint": "Impressum"
+  },
+  "footer": "Alle Rechte vorbehalten.",
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Entschuldigung, wir konnten die Seite, die Sie gesucht haben, nicht finden.",
+    "button": "Zur Startseite"
+  }
+}

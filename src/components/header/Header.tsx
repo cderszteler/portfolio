@@ -8,7 +8,7 @@ import {
   MobileNavigation
 } from "@/components/header/HeaderNavigation";
 import {Avatar, AvatarContainer} from "@/components/header/HeaderAvatar";
-import {ThemeToggle} from "@/components/header/HeaderThemeToggle";
+import HeaderSettings from "@/components/header/settings/HeaderSettings";
 
 // Returns 'number' if it is in the interval  between 'a' and 'b'.
 // Otherwise, the nearest limit value ('a' or 'b') is returned.
@@ -199,7 +199,7 @@ export function Header() {
               </div>
               <div className="flex justify-end md:flex-1">
                 <div className="pointer-events-auto">
-                  <ThemeToggle/>
+                  <HeaderSettings/>
                 </div>
               </div>
             </div>

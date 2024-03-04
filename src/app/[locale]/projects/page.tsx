@@ -1,4 +1,3 @@
-import {type Metadata} from 'next'
 import Image from 'next/image'
 
 import {Card} from '@/components/Card'
@@ -9,16 +8,26 @@ import React from "react";
 import {LinkIcon} from "@heroicons/react/16/solid";
 import {GitHubIcon} from "@/components/SocialIcons";
 import {ArrowRightIcon, BuildingOffice2Icon} from "@heroicons/react/24/outline";
+import initTranslations, {Translation} from "@/app/i18n";
 
-export const metadata: Metadata = {
-  title: 'Projects',
-  description: 'Projects on which and clients with whom I’ve developed.',
+const i18nNamespaces = ['projects'];
+
+export async function generateMetadata({ params: { locale } }:
+{
+  params: { locale: string }
+}) {
+  const { t } = await initTranslations(locale, i18nNamespaces);
+
+  return {
+    title: t('metadata.title'),
+    description: t('metadata.description'),
+  }
 }
 
 const projects = [
   {
     name: 'Abi-Management',
-    description: 'Fullstack application with Spring Boot and NextJS to manage my school’s graduating year.',
+    description: (t: Translation) => t("projects.abi-management.description"),
     link: {
       href: 'https://github.com/cderszteler/abi-management',
       label: 'cderszteler/abi-management',
@@ -28,7 +37,7 @@ const projects = [
   },
 ]
 
-function Projects() {
+function Projects({ t }: { t: Translation }) {
   return (
     <ul
       role="list"
@@ -50,7 +59,7 @@ function Projects() {
             <Card.Title className="mt-6 tracking-normal" href={project.link.href}>
               {project.name}
             </Card.Title>
-            <Card.Description>{project.description}</Card.Description>
+            <Card.Description>{project.description(t)}</Card.Description>
             <p className="relative z-10 mt-6 flex items-center text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
               <Icon className="h-4 w-4 flex-none"/>
               <span className="ml-2">{project.link.label}</span>
@@ -66,10 +75,10 @@ function Projects() {
           className="mt-6 tracking-normal"
           href="https://github.com/cderszteler?tab=repositories"
         >
-          More Projects
+          {t('projects.more.title')}
         </Card.Title>
         <Card.Description className="flex justify-center items-center gap-x-1.5 group-hover:text-teal-500">
-          View more of my projects
+          {t('projects.more.description')}
           <ArrowRightIcon className="w-3.5 h-3.5"/>
         </Card.Description>
       </Card>
@@ -85,11 +94,11 @@ const clients = [
   },
   {
     name: 'Rabek LLC',
-    excerpt: 'We needed [...] expertise in the field of software software development with a focus on backend development. [...] All assigned tasks were completed with great care and to our complete satisfaction.',
+    excerpt: (t: Translation) => t('clients.rabek.excerpt'),
   },
 ]
 
-function Clients() {
+function Clients({ t }: { t: Translation }) {
   return (
     <ul
       role="list"
@@ -116,11 +125,11 @@ function Clients() {
             </Card.Title>
             {client?.excerpt && (
               <Card.Description>
-                &ldquo;{client.excerpt}&rdquo;
+                &ldquo;{client.excerpt(t)}&rdquo;
               </Card.Description>
             )}
             <p className="relative z-10 mt-6 flex justify-center items-center gap-x-1.5 text-sm text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-              Request letter of reference
+              {t('clients.letter-of-reference')}
               <ArrowRightIcon className="w-3.5 h-3.5"/>
             </p>
           </Card>
@@ -130,15 +139,20 @@ function Clients() {
   )
 }
 
-export default function ProjectsPage() {
+export default async function ProjectsPage({ params: { locale } }:
+{
+  params: { locale: string }
+}) {
+  const { t } = await initTranslations(locale, i18nNamespaces);
+
   return (
     <SimpleLayout
-      title="Projects on which and clients with whom I’ve developed."
-      intro="Recently, I've worked mostly on internal projects as a freelancer that I cannot share publicly, however, I try to share my work as often as possible. So check out my few public projects or see my clients' letters of reference."
+      title={t('title')}
+      intro={t('intro')}
     >
-      <Projects/>
+      <Projects t={t}/>
       <div className="mt-10 pb-10 border-t border-zinc-100 dark:border-zinc-700/40 sm:mt-20 sm:pb-20"/>
-      <Clients/>
+      <Clients t={t}/>
     </SimpleLayout>
   )
 }
