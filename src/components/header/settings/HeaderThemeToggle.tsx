@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {useTheme} from "next-themes";
+import clsx from "clsx";
 
 export function ThemeToggle() {
   let { resolvedTheme, setTheme } = useTheme()
@@ -14,11 +15,23 @@ export function ThemeToggle() {
     <button
       type="button"
       aria-label={mounted ? `Switch to ${otherTheme} theme` : 'Toggle theme'}
-      className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+      className={clsx(
+        "group rounded-full flex justify-between items-center px-3 py-1.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:ring-white/10 dark:hover:ring-white/20 sm:py-2",
+        "fill-teal-50 stroke-teal-500 dark:fill-zinc-700 dark:stroke-zinc-500"
+      )}
       onClick={() => setTheme(otherTheme)}
     >
-      <SunIcon className="dark:hidden h-6 w-6 fill-teal-50 stroke-teal-500 group-hover:stroke-teal-600 transition"/>
-      <MoonIcon className="dark:block hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 group-hover:stroke-zinc-400 transition"/>
+      <span
+        aria-hidden="true"
+        className={clsx(
+          'absolute pointer-events-none inline-block h-9 sm:h-10 w-20 rounded-full opacity-10 transform transition duration-200 ease-in-out',
+          resolvedTheme === 'dark'
+            ? 'right-0 bg-zinc-50 group-hover:bg-zinc-100'
+            : 'left-0 bg-zinc-900 group-hover:bg-zinc-800'
+        )}
+      />
+      <SunIcon className="h-6 w-6 group-hover:stroke-teal-600 dark:group-hover:stroke-zinc-400 transition"/>
+      <MoonIcon className="h-6 w-6 group-hover:stroke-teal-600 dark:group-hover:stroke-zinc-400 transition"/>
     </button>
   )
 }
