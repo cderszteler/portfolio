@@ -1,9 +1,18 @@
 import React from "react";
-import {Footer} from "@/components/Footer";
+import {TranslationProvider} from "@/components/TranslationProvider";
+import initTranslations from "@/app/i18n";
+import {Footer} from "./Footer";
 import {Header} from "./header/Header";
-import {Translation} from "@/app/i18n";
 
-export function Layout({ t, children }: { t: Translation, children: React.ReactNode }) {
+const i18nNamespaces = ['index'];
+
+export async function Layout({ locale, children }:
+{
+  locale: string
+  children: React.ReactNode
+}) {
+  const { t, resources } = await initTranslations(locale, i18nNamespaces);
+
   return (
     <>
       <div className="fixed inset-0 flex justify-center sm:px-8">
@@ -12,7 +21,9 @@ export function Layout({ t, children }: { t: Translation, children: React.ReactN
         </div>
       </div>
       <div className="relative flex w-full flex-col">
-        <Header/>
+        <TranslationProvider locale={locale} resources={resources} namespaces={i18nNamespaces}>
+          <Header/>
+        </TranslationProvider>
         <main className="flex-auto">{children}</main>
         <Footer t={t}/>
       </div>
