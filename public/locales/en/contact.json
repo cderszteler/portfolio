@@ -1,0 +1,13 @@
+{
+  "metadata": {
+    "title": "Get in touch",
+    "description": "Let’s talk and discuss your newest ideas or concerns!"
+  },
+  "form": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Let’s talk"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "metadata": {
+    "title": "Kontakt",
+    "description": "Lass Sie uns über Ihre neuesten Ideen und Anliegen diskutieren!"
+  },
+  "form": {
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "submit": "Absenden"
+  }
+}
