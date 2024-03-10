@@ -9,5 +9,11 @@
     "email": "Email",
     "message": "Message",
     "submit": "Let’s talk"
+  },
+  "error": {
+    "firstName": "Please enter your first name.",
+    "lastName": "Please enter your last name.",
+    "email": "Please enter a valid email.",
+    "message": "Please enter your message."
   }
 }

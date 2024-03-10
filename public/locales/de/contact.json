@@ -9,5 +9,11 @@
     "email": "E-Mail",
     "message": "Nachricht",
     "submit": "Absenden"
+  },
+  "error": {
+    "firstName": "Bitte geben Sie Ihren Vornamen an.",
+    "lastName": "Bitte geben Sie Ihren Nachnamen an.",
+    "email": "Bitte geben Sie eine gültige E-Mail an.",
+    "message": "Bitte geben Sie Ihren Nachricht an."
   }
 }
