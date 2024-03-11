@@ -16,5 +16,17 @@
     "email": "Bitte geben Sie eine gültige E-Mail an.",
     "message": "Bitte geben Sie Ihren Nachricht an.",
     "leaving": "Sind Sie sicher, dass Sie die Seite verlassen wollen? Sie haben Ihre Nachricht noch nicht abgeschickt."
+  },
+  "response": {
+    "ok": {
+      "title": "Nachricht gesendet",
+      "description": "Ihre Nachricht wurde versendet. Ich werde Sie binnen weniger Arbeitstage kontaktieren.",
+      "button": "Alles klar"
+    },
+    "failed": {
+      "title": "Nachricht konnte nicht gesendet werden",
+      "description": "Ihre Nachricht konnte nicht gesendet werden. Bitte probieren Sie es in wenigen Minuten erneut oder kontaktieren Sie mich via E-Mail.",
+      "button": "Alles klar"
+    }
   }
 }
