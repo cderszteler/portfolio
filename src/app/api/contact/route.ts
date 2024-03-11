@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import {config, emailFormat, nonEmptyFormat} from "@/lib/mail";
+import {config, validForm} from "@/lib/mail";
 
 export async function POST(request: Request) {
   const body = await request.json()
@@ -33,16 +33,4 @@ export async function POST(request: Request) {
     console.log(body)
     return Response.json({}, { status: 500 })
   }
-}
-
-export function validForm(
-  firstName: string,
-  lastName: string,
-  email: string,
-  message: string
-) {
-  return nonEmptyFormat.test(firstName)
-    && nonEmptyFormat.test(lastName)
-    && emailFormat.test(email)
-    && nonEmptyFormat.test(message)
 }

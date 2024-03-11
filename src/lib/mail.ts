@@ -14,3 +14,15 @@ export const config = {
     rejectUnauthorized: !process.env.MAIL_TLS || process.env.MAIL_TLS !== "false"
   }
 }
+
+export function validForm(
+  firstName: string,
+  lastName: string,
+  email: string,
+  message: string
+) {
+  return nonEmptyFormat.test(firstName)
+    && nonEmptyFormat.test(lastName)
+    && emailFormat.test(email)
+    && nonEmptyFormat.test(message)
+}

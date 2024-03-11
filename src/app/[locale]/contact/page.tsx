@@ -6,8 +6,8 @@ import {useTranslation} from "react-i18next";
 import {Button} from "@/components/Button";
 import {Input, Label, Textarea} from "@/components/Input";
 import {useBeforeUnload} from "@/lib/useBeforeUnload";
-import {emailFormat, nonEmptyFormat} from "@/lib/mail";
-import {validForm} from "@/app/api/contact/route";
+import {emailFormat, nonEmptyFormat, validForm} from "@/lib/mail";
+import {CenteredLoading} from "@/components/Loading";
 
 export default function Contact() {
   const { t } = useTranslation()
