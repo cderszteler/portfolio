@@ -14,6 +14,7 @@ type PatternCheckedEnhanced<T> = Omit<T, 'pattern'> & PatternCheckedInput
 const inputStyle = 'block px-3.5 py-2 text-zinc-800 bg-white/90 rounded-md shadow-lg shadow-zinc-800/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 placeholder:text-zinc-400 sm:text-sm sm:leading-6'
 const defaultStyle = 'ring-1 ring-zinc-900/5 dark:ring-white/10'
 const errorStyle = 'ring-2 ring-red-300 dark:ring-red-500'
+const errorTextStyle = "mt-1.5 text-sm text-red-600 dark:text-red-500"
 
 export function Input({
   className,
@@ -44,9 +45,7 @@ export function Input({
       >
         {children}
       </input>
-      {displayError && (
-        <p className="mt-1.5 text-sm text-red-600 dark:text-red-400">{error}</p>
-      )}
+      {displayError && (<p className={errorTextStyle}>{error}</p>)}
     </>
   )
 }
@@ -78,9 +77,7 @@ export function Textarea({
           }
         }}
       />
-      {displayError && (
-        <p className="mt-1.5 text-sm text-red-600 dark:text-red-400">{error}</p>
-      )}
+      {displayError && (<p className={errorTextStyle}>{error}</p>)}
     </>
   )
 }
