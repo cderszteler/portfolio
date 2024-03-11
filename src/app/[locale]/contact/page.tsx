@@ -1,10 +1,11 @@
 'use client'
 
 import {SimpleLayout} from "@/components/SimpleLayout";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {useTranslation} from "react-i18next";
 import {Button} from "@/components/Button";
 import {Input, Label, Textarea} from "@/components/Input";
+import {useBeforeUnload} from "@/lib/useBeforeUnload";
 
 const nonEmptyFormat = /([a-zA-Z])+/
 // noinspection RegExpUnnecessaryNonCapturingGroup
@@ -18,19 +19,10 @@ export default function Contact() {
   const [message, setMessage] = useState('')
   const [failed, setFailed] = useState(false)
 
-  // TODO: Implement for header/footer routing
-  useEffect(() => {
-    const warnOnClose = (event: BeforeUnloadEvent) => {
-      if (firstName || lastName || email || message) {
-        event.preventDefault();
-      }
-    }
-
-    window.addEventListener("beforeunload", warnOnClose);
-    return () => {
-      window.removeEventListener("beforeunload", warnOnClose);
-    }
-  }, [firstName , lastName , email , message]);
+  useBeforeUnload(
+    !!(firstName.trim() || lastName.trim() || email.trim() || message.trim()),
+    t('error.leaving')
+  )
 
   const submit = () => {
     if (!nonEmptyFormat.test(firstName)

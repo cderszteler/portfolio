@@ -14,6 +14,7 @@
     "firstName": "Please enter your first name.",
     "lastName": "Please enter your last name.",
     "email": "Please enter a valid email.",
-    "message": "Please enter your message."
+    "message": "Please enter your message.",
+    "leaving": "Are you sure you want to leave this page? You have not not sent your message."
   }
 }

@@ -14,6 +14,7 @@
     "firstName": "Bitte geben Sie Ihren Vornamen an.",
     "lastName": "Bitte geben Sie Ihren Nachnamen an.",
     "email": "Bitte geben Sie eine gültige E-Mail an.",
-    "message": "Bitte geben Sie Ihren Nachricht an."
+    "message": "Bitte geben Sie Ihren Nachricht an.",
+    "leaving": "Sind Sie sicher, dass Sie die Seite verlassen wollen? Sie haben Ihre Nachricht noch nicht abgeschickt."
   }
 }
