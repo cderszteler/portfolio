@@ -6,10 +6,8 @@ import {useTranslation} from "react-i18next";
 import {Button} from "@/components/Button";
 import {Input, Label, Textarea} from "@/components/Input";
 import {useBeforeUnload} from "@/lib/useBeforeUnload";
-
-const nonEmptyFormat = /([a-zA-Z])+/
-// noinspection RegExpUnnecessaryNonCapturingGroup
-const emailFormat = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
+import {emailFormat, nonEmptyFormat} from "@/lib/mail";
+import {validForm} from "@/app/api/contact/route";
 
 export default function Contact() {
   const { t } = useTranslation()
@@ -24,16 +22,32 @@ export default function Contact() {
     t('error.leaving')
   )
 
-  const submit = () => {
-    if (!nonEmptyFormat.test(firstName)
-      || !nonEmptyFormat.test(lastName)
-      || !emailFormat.test(email)
-      || !nonEmptyFormat.test(message)
-    ) {
+  const submit = async () => {
+    if (!validForm(firstName, lastName, email, message)) {
       setFailed(true)
       return
     }
-    // TODO: Implement submit
+    try {
+      // TODO: Add loading animation
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({firstName, lastName, email, message})
+      })
+      if (!response.ok) {
+        // noinspection ExceptionCaughtLocallyJS
+        throw new Error()
+      }
+      setFirstName('')
+      setLastName('')
+      setEmail('')
+      setMessage('')
+      // TODO: Animate submit button, color green, shake, whatever
+    } catch (error) {
+      // TODO: Inform about error
+    }
   }
 
   return (
