@@ -15,7 +15,6 @@ import {
   UserIcon
 } from "@heroicons/react/24/outline";
 import initTranslations, {Translation} from "@/app/i18n";
-import {Downloadable} from "@/components/Button";
 
 function SocialLink({
   icon: Icon,
@@ -118,8 +117,9 @@ function Resume({ t }: { t: Translation }) {
           <Role key={index} role={role} t={t}/>
         ))}
       </ol>
-      {/*TODO: Specify correct CV*/}
-      <Downloadable href="/assets/CV.jpg">
+      {/*
+      TODO: Specify correct CV
+      <Downloadable href="/assets/CV.png">
         <Button
           variant="secondary"
           className="group mt-6 w-full"
@@ -128,6 +128,7 @@ function Resume({ t }: { t: Translation }) {
           <ArrowDownIcon className="h-3 w-3 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50"/>
         </Button>
       </Downloadable>
+      */}
     </div>
   )
 }
