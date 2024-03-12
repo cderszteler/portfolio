@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "title": "Get in touch",
+    "description": "Let’s talk and discuss your newest ideas or concerns!"
+  },
+  "form": {
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Let’s talk"
+  },
+  "error": {
+    "firstName": "Please enter your first name.",
+    "lastName": "Please enter your last name.",
+    "email": "Please enter a valid email.",
+    "message": "Please enter your message.",
+    "leaving": "Are you sure you want to leave this page? You have not not sent your message."
+  },
+  "response": {
+    "ok": {
+      "title": "Message sent",
+      "description": "Your message has been sent. I will contact you back in a few work days at latest.",
+      "button": "Okay"
+    },
+    "failed": {
+      "title": "Message could not be sent",
+      "description": "Your message could not be sent. Please try again in a few minutes or contact me via email.",
+      "button": "Okay"
+    }
+  }
+}
