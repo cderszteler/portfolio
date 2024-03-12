@@ -18,7 +18,7 @@ export async function POST(request: Request) {
         A new message has been send via the contact form:
 
         First name: ${body?.firstName}
-        Last name: ${body?.firstName}
+        Last name: ${body?.lastName}
         Email: ${body?.email}
         Content:
         ${body?.message}
