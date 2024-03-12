@@ -23,7 +23,7 @@ pnpm dev
 ## Build & Deploy
 
 This website is designed to be deployed with Docker.
-To build an image, you can execute the `deloy.bat` script or its corresponding
+To build an image, you can execute the [`deploy.bat`](deploy.bat) script or its corresponding
 commands.
 
 To build the application as a standalone server, you need to remove
