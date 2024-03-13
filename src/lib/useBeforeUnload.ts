@@ -3,6 +3,8 @@
 import { useEffect } from 'react'
 import { useBeforeUnload as internalUseBeforeUnload } from 'react-use'
 
+// This more complicated React hook is required in the context of Next.js to not
+// only warn about closing the tab, but also when changing the route through Next.js
 export const useBeforeUnload = (
   confirm = true,
   message = 'Are you sure want to leave this page?'

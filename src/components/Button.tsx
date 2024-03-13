@@ -16,6 +16,9 @@ type ButtonProps = {
   | React.ComponentPropsWithoutRef<typeof Link>
 )
 
+// This button component can be used for standard <button> as well as
+// links (normally <a>, here <Link> (Next.js optimization). This can be also
+// seen in the type of this Button (see ButtonProps above)
 export function Button({
   variant = 'primary',
   className,
@@ -34,6 +37,8 @@ export function Button({
   )
 }
 
+// This function can be used as a wrapper for a <button>, which makes
+// it a button that downloads a file at the specified url at click
 export function Downloadable({ href, children }: {
   href: string
   children: React.ReactElement<React.ComponentPropsWithoutRef<'button'>>

@@ -21,6 +21,7 @@ function NavLink({
   )
 }
 
+// The translation is passed as an argument here, since this is no client component
 export async function Footer({ t }: { t: Translation }) {
   return (
     <footer className="mt-32 flex-none">

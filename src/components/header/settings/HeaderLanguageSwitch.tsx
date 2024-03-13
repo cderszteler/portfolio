@@ -52,6 +52,7 @@ function Language({ locale, currentLocale, flag: Flag }:
 
 const days = 30;
 
+// Stores the preferred language (selected with button) in Browser Cookies for 30 days
 function storeLocalePreference(locale: string) {
   const date = new Date();
   date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);

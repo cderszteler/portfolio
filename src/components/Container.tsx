@@ -31,6 +31,9 @@ export const ContainerInner = forwardRef<
   }
 )
 
+// This container is used on every page (through RootLayout). It is
+// decoupled in Inner- and OuterContainer to style certain components,
+// e.g. the footer
 export const Container = forwardRef<
   React.ElementRef<typeof ContainerOuter>,
   React.ComponentPropsWithoutRef<typeof ContainerOuter>

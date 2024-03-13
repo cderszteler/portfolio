@@ -1,5 +1,6 @@
 import clsx from "clsx";
 
+// A spinning loading-svg (icon)
 export function CenteredLoading({className}: { className?: string | undefined }) {
   return (
     <svg

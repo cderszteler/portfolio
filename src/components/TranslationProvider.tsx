@@ -5,6 +5,7 @@ import React from "react";
 import initTranslations from "@/app/i18n";
 import {I18nextProvider} from "react-i18next";
 
+// Provider to be used for client components that need translations
 export function TranslationProvider({ children, locale, namespaces, resources }:
 {
   locale: string;
