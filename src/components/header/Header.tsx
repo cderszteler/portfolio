@@ -18,6 +18,8 @@ function clamp(number: number, a: number, b: number) {
   return Math.min(Math.max(number, min), max)
 }
 
+// Following calculations are done to present the avatar that is always in the
+// top left corner in a different way in the landing page
 export function Header() {
   let isHomePage = usePathname() === '/'
 
@@ -39,6 +41,7 @@ export function Header() {
       isInitial.current = false
     }
 
+    // Function to update the position of the avatar
     function updateHeaderStyles() {
       if (!headerRef.current) {
         return
@@ -80,6 +83,7 @@ export function Header() {
       }
     }
 
+    // Function to update the size of the avatar
     function updateAvatarStyles() {
       if (!isHomePage) {
         return

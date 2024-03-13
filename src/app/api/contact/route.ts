@@ -1,6 +1,7 @@
 import nodemailer from "nodemailer";
 import {config, validForm} from "@/lib/mail";
 
+// This is the API route the contact form uses
 export async function POST(request: Request) {
   const body = await request.json()
   if (!validForm(body?.firstName, body?.lastName, body?.email, body?.message)) {

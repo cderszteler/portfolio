@@ -5,6 +5,8 @@ import i18nConfig from '@/../i18nConfig';
 
 export type Translation = i18n['t']
 
+// A mandatory function to initialize required translations. Copied and modified
+// as specified in library-specific documentations.
 export default async function initTranslations(
   locale: string,
   namespaces: string[],
