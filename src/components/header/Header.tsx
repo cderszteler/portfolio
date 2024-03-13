@@ -9,6 +9,7 @@ import {
 } from "@/components/header/HeaderNavigation";
 import {Avatar, AvatarContainer} from "@/components/header/HeaderAvatar";
 import HeaderSettings from "@/components/header/settings/HeaderSettings";
+import {useTranslation} from "react-i18next";
 
 // Returns 'number' if it is in the interval  between 'a' and 'b'.
 // Otherwise, the nearest limit value ('a' or 'b') is returned.
@@ -21,11 +22,14 @@ function clamp(number: number, a: number, b: number) {
 // Following calculations are done to present the avatar that is always in the
 // top left corner in a different way in the landing page
 export function Header() {
-  let isHomePage = usePathname() === '/'
+  const { i18n } = useTranslation()
+  const pathname = usePathname()
+  const isHomePage = pathname === '/'
+    || pathname === `/${i18n.language}`
 
-  let headerRef = useRef<React.ElementRef<'div'>>(null)
-  let avatarRef = useRef<React.ElementRef<'div'>>(null)
-  let isInitial = useRef(true)
+  const headerRef = useRef<React.ElementRef<'div'>>(null)
+  const avatarRef = useRef<React.ElementRef<'div'>>(null)
+  const isInitial = useRef(true)
 
   useEffect(() => {
     let downDelay = avatarRef.current?.offsetTop ?? 0
