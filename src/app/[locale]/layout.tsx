@@ -22,6 +22,7 @@ export async function generateMetadata({ params: { locale } }:
   }
 }
 
+// The root layout that determines the base design of the website
 export default async function RootLayout({
   params: { locale },
   children,

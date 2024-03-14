@@ -30,6 +30,7 @@ export default function Contact() {
   )
 
   const submit = async () => {
+    // Does not proceed if the form is being submitted
     if (state && state !== 'invalid') {
       return
     } else if (!validForm(firstName, lastName, email, message)) {
@@ -158,6 +159,9 @@ export default function Contact() {
     </SimpleLayout>
   )
 }
+
+// The following components are modals that are only visible upon "opening" them
+// if the form was submitted successfully or unsuccessfully
 
 function OkModal({ open, onClose }: { open: boolean, onClose: () => void }) {
   const { t } = useTranslation()

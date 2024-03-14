@@ -16,6 +16,8 @@ export async function generateMetadata({ params: { locale } }:
   }
 }
 
+// This layout is mainly intend to provide the TranslationProvider for
+// the contact page with the corresponding translations
 export default async function ContactLayout({
   params: { locale },
   children,

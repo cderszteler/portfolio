@@ -27,6 +27,8 @@ function ThemeWatcher() {
   return null
 }
 
+// This component is a wrapper for multiple Providers that are used across
+// the website (see https://legacy.reactjs.org/docs/context.html for a better understanding)
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider attribute="class" disableTransitionOnChange>

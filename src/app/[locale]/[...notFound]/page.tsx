@@ -4,6 +4,9 @@ import initTranslations from "@/app/i18n";
 
 const i18nNamespaces = ['index'];
 
+// This page is the 404 page. The default Next.js not-found.tsx cannot be used
+// since the middleware adds a language to the url path if necessary.
+// Thus, this page is the fallback page.
 export default async function NotFound({ params: { locale } }:
 {
   params: { locale: string }
