@@ -24,6 +24,24 @@ export async function generateMetadata({ params: { locale } }:
   }
 }
 
+export default async function ProjectsPage({ params: { locale } }:
+{
+  params: { locale: string }
+}) {
+  const { t } = await initTranslations(locale, i18nNamespaces);
+
+  return (
+    <SimpleLayout
+      title={t('title')}
+      intro={t('intro')}
+    >
+      <Projects t={t}/>
+      <div className="mt-10 pb-10 border-t border-zinc-100 dark:border-zinc-700/40 sm:mt-20 sm:pb-20"/>
+      <Clients t={t}/>
+    </SimpleLayout>
+  )
+}
+
 const projects = [
   {
     name: 'Abi-Management',
@@ -136,23 +154,5 @@ function Clients({ t }: { t: Translation }) {
         )
       })}
     </ul>
-  )
-}
-
-export default async function ProjectsPage({ params: { locale } }:
-{
-  params: { locale: string }
-}) {
-  const { t } = await initTranslations(locale, i18nNamespaces);
-
-  return (
-    <SimpleLayout
-      title={t('title')}
-      intro={t('intro')}
-    >
-      <Projects t={t}/>
-      <div className="mt-10 pb-10 border-t border-zinc-100 dark:border-zinc-700/40 sm:mt-20 sm:pb-20"/>
-      <Clients t={t}/>
-    </SimpleLayout>
   )
 }

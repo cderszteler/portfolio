@@ -33,7 +33,7 @@ export default async function Imprint({ params: { locale } }:
           <span className="leading-tight">Habsburgerstr. 3</span>
           <span className="leading-tight">53859 Niederkassel</span>
           {locale !== "de" && (
-            <span className="leading-tight">Germany </span>
+            <span className="leading-tight">Germany</span>
           )}
         </div>
         <div className="flex flex-col items-start">
