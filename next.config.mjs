@@ -7,10 +7,6 @@ const nextConfig = {
         source: '/assets/:path*',
         headers: [
           {
-            key: 'Content-Type',
-            value: 'image/jpeg',
-          },
-          {
             key: 'Content-Disposition',
             value: 'attachment',
           },
