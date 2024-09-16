@@ -9,6 +9,9 @@
     "abi-management": {
       "description": "Fullstack-Anwendung mit Spring Boot und NextJS zur Verwaltung meines Abschlussjahrgangs an der Schule."
     },
+    "birthday-notification-service": {
+      "description": "Software zur täglichen Benachrichtigung über anstehende Geburtstage anhand von Google Kontakten, geschrieben in Go."
+    },
     "more": {
       "title": "Mehr Projekte",
       "description": "Mehr Projekte von mir sehen"

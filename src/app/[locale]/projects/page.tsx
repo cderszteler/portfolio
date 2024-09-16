@@ -3,6 +3,7 @@ import Image from 'next/image'
 import {Card} from '@/components/Card'
 import {SimpleLayout} from '@/components/SimpleLayout'
 import abiManagement from '@/images/projects/abi-management.svg'
+import birthdayNotificationService from '@/images/projects/google-contacts-birthday-notification-service.svg'
 import klaukeEnterprises from '@/images/clients/klauke-enterprises.png'
 import React from "react";
 import {LinkIcon} from "@heroicons/react/16/solid";
@@ -52,6 +53,16 @@ const projects = [
       icon: GitHubIcon
     },
     logo: abiManagement,
+  },
+  {
+    name: 'Contacts Birthday Notification Service',
+    description: (t: Translation) => t("projects.birthday-notification-service.description"),
+    link: {
+      href: 'https://github.com/cderszteler/google-contacts-birthday-notification',
+      label: 'cderszteler/google-contacts-birthday-notification',
+      icon: GitHubIcon
+    },
+    logo: birthdayNotificationService,
   },
 ]
 
