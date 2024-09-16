@@ -59,13 +59,17 @@ function Projects({ t }: { t: Translation }) {
   return (
     <ul
       role="list"
-      className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+      className="grid grid-rows-[auto_auto_auto_auto] grid-cols-1 gap-x-12 sm:grid-cols-2 lg:grid-cols-3 -mb-16"
     >
       {projects.map((project) => {
         const Icon = project.link?.icon ?? LinkIcon
 
         return (
-          <Card as="li" key={project.name}>
+          <Card
+            as="li"
+            key={project.name}
+            className="group relative grid grid-rows-subgrid row-span-4 mb-16"
+          >
             <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
               <Image
                 src={project.logo}
@@ -78,14 +82,14 @@ function Projects({ t }: { t: Translation }) {
               {project.name}
             </Card.Title>
             <Card.Description>{project.description(t)}</Card.Description>
-            <p className="relative z-10 mt-6 flex items-center text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-              <Icon className="h-4 w-4 flex-none"/>
+            <p className="relative z-10 mt-6 flex items-start text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+              <Icon className="mt-0.5 h-4 w-4 flex-none"/>
               <span className="ml-2">{project.link.label}</span>
             </p>
           </Card>
         )
       })}
-      <Card as="li">
+      <Card as="li" className="group relative grid grid-rows-subgrid row-span-4 mb-16">
         <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full shadow-md shadow-zinc-800/5">
           <GitHubIcon className="h-10 w-10 rounded-full fill-zinc-900 dark:fill-white"/>
         </div>
@@ -95,9 +99,11 @@ function Projects({ t }: { t: Translation }) {
         >
           {t('projects.more.title')}
         </Card.Title>
-        <Card.Description className="flex justify-center items-center gap-x-1.5 group-hover:text-teal-500">
-          {t('projects.more.description')}
-          <ArrowRightIcon className="w-3.5 h-3.5"/>
+        <Card.Description className="flex items-start group-hover:text-teal-500">
+          <span className="flex justify-center items-center gap-x-1.5">
+            {t('projects.more.description')}
+            <ArrowRightIcon className="w-3.5 h-3.5"/>
+          </span>
         </Card.Description>
       </Card>
     </ul>
