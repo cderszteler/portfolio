@@ -7,6 +7,7 @@ import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
+import incsLogo from '@/images/clients/incs-logo.png'
 import {Container} from "@/components/Container";
 import {GitHubIcon, LinkedInIcon} from "@/components/SocialIcons";
 import {
@@ -117,9 +118,16 @@ const resume: Array<Role> = [
     },
     icon: UserIcon,
     start: '2022',
+    end: '2024',
+  },
+  {
+    company: 'incs GmbH',
+    title: (t) => t('cv.software-engineer'),
+    logo: incsLogo,
+    start: '2024',
     end: {
       label: (t) => t('cv.present'),
-      dateTime: '2024',
+      dateTime: '2025',
     },
   }
 ]
