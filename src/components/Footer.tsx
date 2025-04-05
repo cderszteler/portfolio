@@ -34,9 +34,6 @@ export async function Footer({ t }: { t: Translation }) {
                   <NavLink href="/projects">{t('navigation.projects')}</NavLink>
                   <NavLink href="/contact">{t('navigation.contact')}</NavLink>
                 </div>
-                <div className="flex flex-wrap justify-center gap-x-6 text-sm text-zinc-400 dark:text-zinc-500 sm:justify-start">
-                  <NavLink href="/imprint">{t('navigation.imprint')}</NavLink>
-                </div>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
                 &copy; {new Date().getFullYear()} Christoph Derszteler.&nbsp;
