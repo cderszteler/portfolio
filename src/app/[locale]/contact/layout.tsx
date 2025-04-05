@@ -4,10 +4,11 @@ import {TranslationProvider} from "@/components/TranslationProvider";
 
 const i18nNamespaces = ['contact'];
 
-export async function generateMetadata({ params: { locale } }:
+export async function generateMetadata({ params }:
 {
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) {
+  const { locale } = await params;
   const { t } = await initTranslations(locale, i18nNamespaces);
 
   return {
@@ -16,13 +17,11 @@ export async function generateMetadata({ params: { locale } }:
   }
 }
 
-export default async function ContactLayout({
-  params: { locale },
-  children,
-}: {
-  params: { locale: string }
+export default async function ContactLayout({params, children}: {
+  params: Promise<{ locale: string }>
   children: React.ReactNode
 }) {
+  const { locale } = await params;
   const { resources } = await initTranslations(locale, i18nNamespaces);
 
   return (

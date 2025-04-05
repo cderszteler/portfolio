@@ -21,10 +21,11 @@ import {Button, Downloadable } from '@/components/Button';
 
 const i18nNamespaces = ['home', 'index'];
 
-export default async function Home({ params: { locale } }:
+export default async function Home({ params }:
 {
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) {
+  const { locale } = await params;
   const { t } = await initTranslations(locale, i18nNamespaces);
 
   return (

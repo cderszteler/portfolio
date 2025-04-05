@@ -4,10 +4,11 @@ import initTranslations from "@/app/i18n";
 
 const i18nNamespaces = ['index'];
 
-export default async function NotFound({ params: { locale } }:
+export default async function NotFound({ params }:
 {
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) {
+  const { locale } = await params;
   const { t } = await initTranslations(locale, i18nNamespaces);
 
   return (

@@ -11,10 +11,11 @@ import initTranslations from "@/app/i18n";
 
 const i18nNamespaces = ['about', 'index'];
 
-export async function generateMetadata({ params: { locale } }:
+export async function generateMetadata({ params }:
 {
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) {
+  const { locale } = await params;
   const { t } = await initTranslations(locale, i18nNamespaces);
 
   return {
@@ -23,10 +24,11 @@ export async function generateMetadata({ params: { locale } }:
   }
 }
 
-export default async function About({ params: { locale } }:
+export default async function About({ params }:
 {
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) {
+  const { locale } = await params;
   const { t } = await initTranslations(locale, i18nNamespaces);
 
   return (
