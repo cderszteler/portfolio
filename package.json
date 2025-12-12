@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "1.2.16",
+  "version": "1.2.17",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -15,7 +15,7 @@
     "country-flag-icons": "^1.6.4",
     "i18next": "^23.16.8",
     "i18next-resources-to-backend": "^1.2.1",
-    "next": "^15.5.7",
+    "next": "^15.5.9",
     "next-i18n-router": "^5.5.5",
     "next-themes": "^0.2.1",
     "nodemailer": "^7.0.11",
@@ -26,7 +26,7 @@
     "sharp": "^0.33.5"
   },
   "devDependencies": {
-    "@types/node": "^20.19.25",
+    "@types/node": "^20.19.26",
     "@types/nodemailer": "^6.4.21",
     "@types/react": "^18.3.27",
     "@types/react-dom": "^18.3.7",
@@ -34,7 +34,7 @@
     "eslint": "^8.57.1",
     "eslint-config-next": "14.1.0",
     "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.18",
+    "tailwindcss": "^3.4.19",
     "typescript": "^5.9.3"
   },
   "pnpm": {
