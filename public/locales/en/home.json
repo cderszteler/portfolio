@@ -8,6 +8,10 @@
     "learn-more": "Learn more",
     "software-engineer": "Software engineer",
     "present": "Present",
+    "months": {
+      "november": "November",
+      "december": "December"
+    },
     "download": "Download CV",
     "href": "/assets/CV%20-%20Christoph%20Derszteler%20(English).pdf"
   }

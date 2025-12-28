@@ -8,6 +8,7 @@ import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
 import incsLogo from '@/images/clients/incs-logo.png'
+import infinosLogo from '@/images/clients/infinos-logo.png'
 import {Container} from "@/components/Container";
 import {GitHubIcon, LinkedInIcon} from "@/components/SocialIcons";
 import {
@@ -125,7 +126,23 @@ const resume: Array<Role> = [
     company: 'incs GmbH',
     title: (t) => t('cv.software-engineer'),
     logo: incsLogo,
-    start: '2024',
+    start: {
+      label: (t) => `${t('cv.months.november')} 2024`,
+      dateTime: 'November 2024',
+    },
+    end: {
+      label: (t) => `${t('cv.months.december')} 2025`,
+      dateTime: 'December 2025',
+    },
+  },
+  {
+    company: 'infinos GmbH',
+    title: (t) => t('cv.software-engineer'),
+    logo: infinosLogo,
+    start: {
+      label: (t) => `${t('cv.months.december')} 2025`,
+      dateTime: 'december 2025',
+    },
     end: {
       label: (t) => t('cv.present'),
       dateTime: '2025',
@@ -162,12 +179,12 @@ type Role = {
   company: string | ((t: Translation) => string)
   title: string | ((t: Translation) => string)
     | { label: (t: Translation) => React.ReactNode, href: string }
-  start: string | { label: string; dateTime: string }
+  start: string | { label: ((t: Translation) => string); dateTime: string }
   end: string | { label: ((t: Translation) => string); dateTime: string }
 } & ({ logo: ImageProps['src'], icon?: never } | { icon: typeof UserIcon, logo?: never })
 
 function Role({ role, t }: { role: Role, t: Translation }) {
-  const startLabel = typeof role.start === 'string' ? role.start : role.start.label
+  const startLabel = typeof role.start === 'string' ? role.start : role.start.label(t)
   const startDate = typeof role.start === 'string' ? role.start : role.start.dateTime
 
   const endLabel = typeof role.end === 'string' ? role.end : role.end.label(t)
