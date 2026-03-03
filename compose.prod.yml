@@ -1,0 +1,12 @@
+services:
+  app:
+    # For CI we pass DOCKER_IMAGE_NAME + DOCKER_IMAGE_TAG via --env-file.
+    # For manual usage, create a .env next to this file containing DOCKER_IMAGE_NAME=you/name
+    image: "${DOCKER_IMAGE_NAME:?set DOCKER_IMAGE_NAME (e.g. username/repo)}:${DOCKER_IMAGE_TAG:-latest}"
+    pull_policy: always
+    container_name: portfolio-app
+    restart: unless-stopped
+    env_file:
+      - .env.prod
+    ports:
+      - "127.0.0.1:3443:3000"
