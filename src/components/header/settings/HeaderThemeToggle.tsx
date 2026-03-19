@@ -16,7 +16,7 @@ export function ThemeToggle() {
       type="button"
       aria-label={mounted ? `Switch to ${otherTheme} theme` : 'Toggle theme'}
       className={clsx(
-        "group rounded-full flex justify-between items-center px-3 py-1.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:ring-white/10 dark:hover:ring-white/20 sm:py-2",
+        "group rounded-full flex justify-between items-center px-3 py-1.5 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur-sm transition dark:ring-white/10 dark:hover:ring-white/20 sm:py-2",
         "fill-teal-50 stroke-teal-500 dark:fill-zinc-700 dark:stroke-zinc-500"
       )}
       onClick={() => setTheme(otherTheme)}

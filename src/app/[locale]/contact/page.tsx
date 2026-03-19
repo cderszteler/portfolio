@@ -143,8 +143,8 @@ export default function Contact() {
             className={clsx(
               "w-full flex items-center",
               state === 'submitting' ? "cursor-not-allowed" : "",
-              state === 'failed' ? 'animate-shake !bg-red-500 ' : '',
-              state === 'ok' ? 'animate-up !bg-green-500 ' : ''
+              state === 'failed' ? 'animate-shake bg-red-500! ' : '',
+              state === 'ok' ? 'animate-up bg-green-500! ' : ''
             )}
             disabled={state && state !== 'invalid'}
           >
@@ -182,7 +182,7 @@ function OkModal({ open, onClose }: { open: boolean, onClose: () => void }) {
       <div className="mt-5 sm:mt-6">
         <button
           type="button"
-          className="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-zinc-100 shadow-sm transition hover:bg-green-500"
+          className="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-zinc-100 shadow-xs transition hover:bg-green-500"
           onClick={onClose}
         >
           {t('response.ok.button')}
@@ -215,7 +215,7 @@ function FailedModal({ open, onClose }: { open: boolean, onClose: () => void }) 
       <div className="mt-5 sm:mt-6">
         <button
           type="button"
-          className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-zinc-100 shadow-sm transition hover:bg-red-500"
+          className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-zinc-100 shadow-xs transition hover:bg-red-500"
           onClick={onClose}
         >
           {t('response.failed.button')}
