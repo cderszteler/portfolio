@@ -11,7 +11,7 @@ import {CenteredLoading} from "@/components/Loading";
 import clsx from "clsx";
 import Modal from "@/components/Modal";
 import {CheckIcon, XMarkIcon} from "@heroicons/react/24/outline";
-import {Dialog} from "@headlessui/react";
+import {DialogTitle} from "@headlessui/react";
 
 type State = 'invalid' | 'submitting' | 'failed' | 'ok'
 
@@ -143,8 +143,8 @@ export default function Contact() {
             className={clsx(
               "w-full flex items-center",
               state === 'submitting' ? "cursor-not-allowed" : "",
-              state === 'failed' ? 'animate-shake !bg-red-500 ' : '',
-              state === 'ok' ? 'animate-up !bg-green-500 ' : ''
+              state === 'failed' ? 'animate-shake bg-red-500! ' : '',
+              state === 'ok' ? 'animate-up bg-green-500! ' : ''
             )}
             disabled={state && state !== 'invalid'}
           >
@@ -169,9 +169,9 @@ function OkModal({ open, onClose }: { open: boolean, onClose: () => void }) {
           <CheckIcon className="h-6 w-6 text-green-600 dark:text-green-400" aria-hidden="true"/>
         </div>
         <div className="mt-3 text-center sm:mt-5">
-          <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-zinc-800 dark:text-zinc-100">
+          <DialogTitle as="h3" className="text-base font-semibold leading-6 text-zinc-800 dark:text-zinc-100">
             {t('response.ok.title')}
-          </Dialog.Title>
+          </DialogTitle>
           <div className="mt-2">
             <p className="text-sm text-zinc-600 dark:text-zinc-400">
               {t('response.ok.description')}
@@ -182,7 +182,7 @@ function OkModal({ open, onClose }: { open: boolean, onClose: () => void }) {
       <div className="mt-5 sm:mt-6">
         <button
           type="button"
-          className="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-zinc-100 shadow-sm transition hover:bg-green-500"
+          className="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-zinc-100 shadow-xs transition hover:bg-green-500"
           onClick={onClose}
         >
           {t('response.ok.button')}
@@ -202,9 +202,9 @@ function FailedModal({ open, onClose }: { open: boolean, onClose: () => void }) 
           <XMarkIcon className="h-6 w-6 text-red-600 dark:text-red-400" aria-hidden="true"/>
         </div>
         <div className="mt-3 text-center sm:mt-5">
-          <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-zinc-800 dark:text-zinc-100">
+          <DialogTitle as="h3" className="text-base font-semibold leading-6 text-zinc-800 dark:text-zinc-100">
             {t('response.failed.title')}
-          </Dialog.Title>
+          </DialogTitle>
           <div className="mt-2">
             <p className="text-sm text-zinc-600 dark:text-zinc-400">
               {t('response.failed.description')}
@@ -215,7 +215,7 @@ function FailedModal({ open, onClose }: { open: boolean, onClose: () => void }) 
       <div className="mt-5 sm:mt-6">
         <button
           type="button"
-          className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-zinc-100 shadow-sm transition hover:bg-red-500"
+          className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-zinc-100 shadow-xs transition hover:bg-red-500"
           onClick={onClose}
         >
           {t('response.failed.button')}

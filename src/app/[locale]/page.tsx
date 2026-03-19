@@ -57,7 +57,7 @@ export default async function Home({ params }:
       </Container>
       <Photos/>
       <Container className="mt-24 md:mt-28">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-screen-sm">
+        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-(--breakpoint-sm)">
           <Resume t={t}/>
         </div>
       </Container>
@@ -88,7 +88,7 @@ function Photos() {
           <div
             key={image.src}
             className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
+              'relative aspect-9/10 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
               // Alternating rotation
               rotations[imageIndex % rotations.length],
             )}
