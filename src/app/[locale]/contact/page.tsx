@@ -11,7 +11,7 @@ import {CenteredLoading} from "@/components/Loading";
 import clsx from "clsx";
 import Modal from "@/components/Modal";
 import {CheckIcon, XMarkIcon} from "@heroicons/react/24/outline";
-import {Dialog} from "@headlessui/react";
+import {DialogTitle} from "@headlessui/react";
 
 type State = 'invalid' | 'submitting' | 'failed' | 'ok'
 
@@ -169,9 +169,9 @@ function OkModal({ open, onClose }: { open: boolean, onClose: () => void }) {
           <CheckIcon className="h-6 w-6 text-green-600 dark:text-green-400" aria-hidden="true"/>
         </div>
         <div className="mt-3 text-center sm:mt-5">
-          <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-zinc-800 dark:text-zinc-100">
+          <DialogTitle as="h3" className="text-base font-semibold leading-6 text-zinc-800 dark:text-zinc-100">
             {t('response.ok.title')}
-          </Dialog.Title>
+          </DialogTitle>
           <div className="mt-2">
             <p className="text-sm text-zinc-600 dark:text-zinc-400">
               {t('response.ok.description')}
@@ -202,9 +202,9 @@ function FailedModal({ open, onClose }: { open: boolean, onClose: () => void }) 
           <XMarkIcon className="h-6 w-6 text-red-600 dark:text-red-400" aria-hidden="true"/>
         </div>
         <div className="mt-3 text-center sm:mt-5">
-          <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-zinc-800 dark:text-zinc-100">
+          <DialogTitle as="h3" className="text-base font-semibold leading-6 text-zinc-800 dark:text-zinc-100">
             {t('response.failed.title')}
-          </Dialog.Title>
+          </DialogTitle>
           <div className="mt-2">
             <p className="text-sm text-zinc-600 dark:text-zinc-400">
               {t('response.failed.description')}
