@@ -40,8 +40,8 @@ importers:
         specifier: ^16.2.4
         version: 16.2.4(@babel/core@7.29.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-i18n-router:
-        specifier: ^5.5.7
-        version: 5.5.7(next@16.2.4(@babel/core@7.29.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
+        specifier: ^5.5.8
+        version: 5.5.8(next@16.2.4(@babel/core@7.29.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1677,8 +1677,8 @@ packages:
     resolution: {integrity: sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==}
     engines: {node: '>= 0.6'}
 
-  next-i18n-router@5.5.7:
-    resolution: {integrity: sha512-LG/mqNJhvCpxH+sZjvzqoDnwsGUOcF425q38TNsk0zNRPQ2qabYRL5AhtEDELr6I2WRwIKaB421tgo2DYJS2YA==}
+  next-i18n-router@5.5.8:
+    resolution: {integrity: sha512-m6wFayccaeUBjvTmaWoBovinHchqgmzqnTJHVdmfvwBjKiS8oPQDogGZyNmZBhFeFtWSjI9UOEoxL9lzodw3lg==}
     peerDependencies:
       next: '>=14.2.25'
 
@@ -3877,7 +3877,7 @@ snapshots:
 
   negotiator@1.0.0: {}
 
-  next-i18n-router@5.5.7(next@16.2.4(@babel/core@7.29.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
+  next-i18n-router@5.5.8(next@16.2.4(@babel/core@7.29.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
       '@formatjs/intl-localematcher': 0.6.2
       negotiator: 1.0.0
