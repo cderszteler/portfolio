@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {useTheme} from "next-themes";
+import {useTheme} from "@teispace/next-themes";
 import clsx from "clsx";
 
 export function ThemeToggle() {

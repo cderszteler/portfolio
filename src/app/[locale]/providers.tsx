@@ -1,7 +1,7 @@
 'use client'
 
 import React, {useEffect} from 'react'
-import {ThemeProvider, useTheme} from 'next-themes'
+import {ThemeProvider, useTheme} from '@teispace/next-themes'
 
 function ThemeWatcher() {
   let { resolvedTheme, setTheme } = useTheme()

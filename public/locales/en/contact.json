@@ -20,7 +20,7 @@
   "response": {
     "ok": {
       "title": "Message sent",
-      "description": "Your message has been sent. I will contact you back in a few work days at latest.",
+      "description": "Your message has been sent. I will contact you in a few work days at latest.",
       "button": "Okay"
     },
     "failed": {
