@@ -2,7 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
-import avatarImage from "@/images/avatar.jpg";
+import avatarImage from "@/images/avatar.png";
 
 export function AvatarContainer({
   className,
