@@ -15,8 +15,8 @@ importers:
         specifier: ^2.2.0
         version: 2.2.0(react@18.3.1)
       '@teispace/next-themes':
-        specifier: ^0.5.0
-        version: 0.5.0(next@16.2.10(@babel/core@7.29.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^2.0.4
+        version: 2.0.4(next@16.2.10(@babel/core@7.29.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -803,8 +803,9 @@ packages:
   '@tanstack/virtual-core@3.17.4':
     resolution: {integrity: sha512-nGm5KteqxasUdThLc2izl6dHUqLv0LQj7Nuyo5gYalTPf/U8a9ermvsl7reT+6ioBW1l8WfpP/mcU338nLXpqw==}
 
-  '@teispace/next-themes@0.5.0':
-    resolution: {integrity: sha512-Y/wijExDhEGmEbL3r8cDdTRsamOHxkDPJG78pqDJEqT6u35tlazC0qrwUXcRHz59YXzjlvyfQSRCIbuo5dGUiA==}
+  '@teispace/next-themes@2.0.4':
+    resolution: {integrity: sha512-Vyu1b4oARmGf6/WC83nqyrfX7ZrYWRueY55DakwkXhizgXDgOOIo0lCroNvbLpR+TxN1dquoZ2DnHN2PifsRnQ==}
+    engines: {node: '>=24.0.0'}
     peerDependencies:
       next: '>=13.0.0'
       react: '>=18.0.0'
@@ -3010,7 +3011,7 @@ snapshots:
 
   '@tanstack/virtual-core@3.17.4': {}
 
-  '@teispace/next-themes@0.5.0(next@16.2.10(@babel/core@7.29.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@teispace/next-themes@2.0.4(next@16.2.10(@babel/core@7.29.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
