@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "1.3.10",
+  "version": "1.3.11",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "packageManager": "pnpm@12.6.0+sha512.3ef68f951cb111ac204b4a5a16f0b2ddf0da56a96e0413e81d855d9f0b55ef926714709028e1cd00c405c2c5fb7b9e8ec4dc46777c805d0373c2f2ff00fd20ec",
   "dependencies": {
     "@headlessui/react": "^2.2.10",
     "@heroicons/react": "^2.2.0",
@@ -16,7 +17,7 @@
     "country-flag-icons": "^1.6.20",
     "i18next": "^25.10.10",
     "i18next-resources-to-backend": "^1.2.3",
-    "next": "^16.3.5",
+    "next": "^16.3.6",
     "next-i18n-router": "^5.5.8",
     "nodemailer": "^9.1.1",
     "react": "^18.3.1",
@@ -27,15 +28,14 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",
-    "@types/node": "^25.9.5",
+    "@types/node": "^25.9.8",
     "@types/nodemailer": "^7.0.12",
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
-    "eslint": "^10.10.0",
+    "eslint": "^10.11.0",
     "eslint-config-next": "16.3.5",
     "postcss": "^8.5.28",
     "tailwindcss": "^4.3.3",
     "typescript": "^5.9.3"
-  },
-  "packageManager": "pnpm@11.8.0+sha512.c1f5e7c4cb241c8f174b743851d82f42b802324afc8b0f116b96adb15aa06664948dde36960a3ba1079ba5b4b29dd0140135b94b5b5f5263592249d68e555f26"
+  }
 }
