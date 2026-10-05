@@ -173,8 +173,8 @@ importers:
         specifier: ^2.2.0
         version: 2.2.0(react@18.3.1)
       '@teispace/next-themes':
-        specifier: ^0.5.0
-        version: 0.5.0(next@16.3.8(@babel/core@7.29.7)(@types/node@25.9.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^3.0.2
+        version: 3.0.2(next@16.3.8(@babel/core@7.29.7)(@types/node@25.9.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -831,8 +831,9 @@ packages:
   '@tanstack/virtual-core@3.17.11':
     resolution: {integrity: sha512-+ILjvtHup6Y2hzQ6YzwMgX1Q+oQpxEGOXCEsCNaPoIP0VxMbizIBTmYTDtkerkIQS8/CbP1BRuyt8V/8BCsy1g==}
 
-  '@teispace/next-themes@0.5.0':
-    resolution: {integrity: sha512-Y/wijExDhEGmEbL3r8cDdTRsamOHxkDPJG78pqDJEqT6u35tlazC0qrwUXcRHz59YXzjlvyfQSRCIbuo5dGUiA==}
+  '@teispace/next-themes@3.0.2':
+    resolution: {integrity: sha512-60ha/eiWuW+DVI9fkUAFK6tTrnwAvviTrHp7h7ivQMYnQrwi/HDDbXgV3HK8HqMoyW6JxyxrKryG6l1X4uh74w==}
+    engines: {node: '>=20.9.0'}
     peerDependencies:
       next: '>=13.0.0'
       react: '>=18.0.0'
@@ -2976,7 +2977,7 @@ snapshots:
 
   '@tanstack/virtual-core@3.17.11': {}
 
-  '@teispace/next-themes@0.5.0(next@16.3.8(@babel/core@7.29.7)(@types/node@25.9.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@teispace/next-themes@3.0.2(next@16.3.8(@babel/core@7.29.7)(@types/node@25.9.8)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
